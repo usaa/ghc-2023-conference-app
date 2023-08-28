@@ -27,6 +27,11 @@ class ConferenceScheduleService {
     }
     
     func getSchedule() async -> ConferenceSchedule {
+        if let storedData = UserDefaults.standard.data(forKey: "ServiceConferenceSchedule"),
+           let data = try? JSONDecoder().decode(ConferenceSchedule.self, from: storedData) {
+            self.conferenceSchedule = data
+            return data
+        }
         return self.conferenceSchedule
     }
     
@@ -36,6 +41,10 @@ class ConferenceScheduleService {
             registerSession.isRegistered = true
             self.conferenceSchedule.sessions?[s] = registerSession
         }
+        guard let encodedData = try? JSONEncoder().encode(self.conferenceSchedule) else {
+            return self.conferenceSchedule
+        }
+        UserDefaults.standard.set(encodedData, forKey: "ServiceConferenceSchedule")
         return self.conferenceSchedule
     }
 
@@ -45,6 +54,10 @@ class ConferenceScheduleService {
             registerSession.isRegistered = false
             self.conferenceSchedule.sessions?[s] = registerSession
         }
+        guard let encodedData = try? JSONEncoder().encode(self.conferenceSchedule) else {
+            return self.conferenceSchedule
+        }
+        UserDefaults.standard.set(encodedData, forKey: "ServiceConferenceSchedule")
         return self.conferenceSchedule
     }
 }
