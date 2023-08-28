@@ -27,6 +27,11 @@ class ConferenceScheduleService {
     }
     
     func getSchedule() -> ConferenceSchedule {
+        if let storedData = UserDefaults.standard.data(forKey: "ServiceConferenceSchedule"),
+           let data = try? JSONDecoder().decode(ConferenceSchedule.self, from: storedData) {
+            self.conferenceSchedule = data
+            return data
+        }
         return self.conferenceSchedule
     }
     
@@ -36,6 +41,10 @@ class ConferenceScheduleService {
             registerSession.isRegistered = true
             self.conferenceSchedule.sessions?[s] = registerSession
         }
+        guard let encodedData = try? JSONEncoder().encode(self.conferenceSchedule) else {
+            return self.conferenceSchedule
+        }
+        UserDefaults.standard.set(encodedData, forKey: "ServiceConferenceSchedule")
         return self.conferenceSchedule
     }
 
@@ -45,24 +54,10 @@ class ConferenceScheduleService {
             registerSession.isRegistered = false
             self.conferenceSchedule.sessions?[s] = registerSession
         }
-        return self.conferenceSchedule
-    }
-    
-    func register(session: Session) async -> ConferenceSchedule {
-        if let s = self.conferenceSchedule.sessions?.firstIndex(of: session) {
-            var registerSession = session
-            registerSession.isRegistered = true
-            self.conferenceSchedule.sessions?[s] = registerSession
+        guard let encodedData = try? JSONEncoder().encode(self.conferenceSchedule) else {
+            return self.conferenceSchedule
         }
-        return self.conferenceSchedule
-    }
-
-    func unregister(session: Session) async -> ConferenceSchedule {
-        if let s = self.conferenceSchedule.sessions?.firstIndex(of: session) {
-            var registerSession = session
-            registerSession.isRegistered = false
-            self.conferenceSchedule.sessions?[s] = registerSession
-        }
+        UserDefaults.standard.set(encodedData, forKey: "ServiceConferenceSchedule")
         return self.conferenceSchedule
     }
 }

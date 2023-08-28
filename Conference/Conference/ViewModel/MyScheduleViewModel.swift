@@ -18,5 +18,4 @@ class MyScheduleViewModel: ObservableObject {
     func loadSchedule() {
         self.conferenceSchedule = ConferenceScheduleService().getSchedule()
     }
-    
 }

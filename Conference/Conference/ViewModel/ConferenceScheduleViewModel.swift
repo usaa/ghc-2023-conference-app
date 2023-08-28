@@ -17,7 +17,7 @@ class ConferenceScheduleViewModel: ObservableObject {
         self.service = ConferenceScheduleService()
         self.loadSchedule()
     }
-    
+
     func loadSchedule() {
         self.conferenceSchedule = self.service.getSchedule()
     }
@@ -29,6 +29,5 @@ class ConferenceScheduleViewModel: ObservableObject {
     func removeSession(session: Session) {
         self.service.unregister(session: session)
     }
-    
 }
 

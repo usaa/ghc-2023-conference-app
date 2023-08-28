@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ConferenceSchedule {
+struct ConferenceSchedule: Codable {
     let userID: Int
     var sessions: [Session]?
 }
