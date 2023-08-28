@@ -22,6 +22,7 @@
 		0CC7F1D82A9E47A200B4C8D7 /* MyScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC7F1D72A9E47A200B4C8D7 /* MyScheduleViewModel.swift */; };
 		0CC7F1DA2A9E47AA00B4C8D7 /* MyScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC7F1D92A9E47AA00B4C8D7 /* MyScheduleView.swift */; };
 		0CC7F1DC2A9E484700B4C8D7 /* ConferenceScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC7F1DB2A9E484700B4C8D7 /* ConferenceScheduleService.swift */; };
+		0CC7F1E42A9E5B9500B4C8D7 /* ConferenceScheduleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC7F1E32A9E5B9500B4C8D7 /* ConferenceScheduleRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		0CC7F1D72A9E47A200B4C8D7 /* MyScheduleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScheduleViewModel.swift; sourceTree = "<group>"; };
 		0CC7F1D92A9E47AA00B4C8D7 /* MyScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScheduleView.swift; sourceTree = "<group>"; };
 		0CC7F1DB2A9E484700B4C8D7 /* ConferenceScheduleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceScheduleService.swift; sourceTree = "<group>"; };
+		0CC7F1E32A9E5B9500B4C8D7 /* ConferenceScheduleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceScheduleRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			children = (
 				0CC7F1CF2A9D4DF800B4C8D7 /* View */,
 				0CC7F1D02A9D4E6700B4C8D7 /* ViewModel */,
+				0CC7F1E22A9E5B6900B4C8D7 /* Repository */,
 				0CC7F1CA2A9D4D7400B4C8D7 /* Model */,
 				0CC7F19D2A9D30BB00B4C8D7 /* ConferenceApp.swift */,
 				0CC7F19F2A9D30BB00B4C8D7 /* ContentView.swift */,
@@ -154,7 +157,6 @@
 			children = (
 				0CC7F1CB2A9D4D9000B4C8D7 /* Session.swift */,
 				0CC7F1CD2A9D4DB400B4C8D7 /* ConferenceSchedule.swift */,
-				0CC7F1DB2A9E484700B4C8D7 /* ConferenceScheduleService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,6 +177,15 @@
 				0CC7F1D72A9E47A200B4C8D7 /* MyScheduleViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0CC7F1E22A9E5B6900B4C8D7 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				0CC7F1DB2A9E484700B4C8D7 /* ConferenceScheduleService.swift */,
+				0CC7F1E32A9E5B9500B4C8D7 /* ConferenceScheduleRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +321,7 @@
 			files = (
 				0CC7F1CC2A9D4D9000B4C8D7 /* Session.swift in Sources */,
 				0CC7F1A02A9D30BB00B4C8D7 /* ContentView.swift in Sources */,
+				0CC7F1E42A9E5B9500B4C8D7 /* ConferenceScheduleRepository.swift in Sources */,
 				0CC7F19E2A9D30BB00B4C8D7 /* ConferenceApp.swift in Sources */,
 				0CC7F1DA2A9E47AA00B4C8D7 /* MyScheduleView.swift in Sources */,
 				0CC7F1D82A9E47A200B4C8D7 /* MyScheduleViewModel.swift in Sources */,

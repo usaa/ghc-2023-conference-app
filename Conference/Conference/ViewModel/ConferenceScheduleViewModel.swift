@@ -11,23 +11,24 @@ import Foundation
 class ConferenceScheduleViewModel: ObservableObject {
     
     @Published var conferenceSchedule: ConferenceSchedule = ConferenceSchedule(userID: 98765, sessions: [])
-    var service: ConferenceScheduleService
+    var repository: ConferenceScheduleRepository
     
     init() {
-        self.service = ConferenceScheduleService()
+        self.repository = ConferenceScheduleRepository()
         self.loadSchedule()
     }
-
+    
     func loadSchedule() {
-        self.conferenceSchedule = self.service.getSchedule()
+        self.conferenceSchedule = self.repository.getSessions()
     }
     
     func addSession(session: Session) {
-        self.service.register(session: session)
+        self.repository.add(session: session)
     }
     
     func removeSession(session: Session) {
-        self.service.unregister(session: session)
+        self.repository.remove(session: session)
     }
+    
 }
 
