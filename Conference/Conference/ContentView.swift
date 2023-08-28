@@ -8,14 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    let conferenceScheduleRepository: ConferenceScheduleRepository = ConferenceScheduleRepository()
+    
+    let service = ConferenceScheduleService()
+    let store = ConferenceScheduleDataStore(minutesToLive: 0.5)
+    let conferenceScheduleRepository: ConferenceScheduleRepository
+    let conferenceScheduleViewModel: ConferenceScheduleViewModel
+    let myScheduleViewModel: MyScheduleViewModel
+    
+    init() {
+        self.conferenceScheduleRepository = ConferenceScheduleRepository(service: self.service, store: self.store)
+        self.conferenceScheduleViewModel = ConferenceScheduleViewModel(repository: self.conferenceScheduleRepository)
+        self.myScheduleViewModel = MyScheduleViewModel(repository: self.conferenceScheduleRepository)
+    }
     var body: some View {
         TabView {
-            ConferenceScheduleView(repository: conferenceScheduleRepository)
+            ConferenceScheduleView(viewModel: self.conferenceScheduleViewModel)
                 .tabItem{
                     Label("Schedule", systemImage: "calendar.badge.plus")
                 }
-            MyScheduleView(repository: conferenceScheduleRepository)
+            MyScheduleView(viewModel: self.myScheduleViewModel)
                 .tabItem{
                     Label("My Schedule", systemImage: "star.fill")
                 }

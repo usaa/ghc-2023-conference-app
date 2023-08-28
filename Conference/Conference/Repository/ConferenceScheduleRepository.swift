@@ -12,10 +12,12 @@ class ConferenceScheduleRepository {
     
     var data: AnyPublisher<ConferenceScheduleResult, Never> = CurrentValueSubject(ConferenceScheduleResult.uninitialized).eraseToAnyPublisher()
     
-    private let service: ConferenceScheduleService = ConferenceScheduleService()
-    private let store: ConferenceScheduleDataStore = ConferenceScheduleDataStore()
+    private let service: ConferenceScheduleServiceHandler
+    private let store: DataStore
     
-    init() {
+    init(service: ConferenceScheduleServiceHandler, store: DataStore) {
+        self.service = service
+        self.store = store
         data = store.data.handleEvents(receiveSubscription: { [weak self] _ in
             if self?.store.expired == true {
                 self?.refresh()

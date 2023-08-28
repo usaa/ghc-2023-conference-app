@@ -11,8 +11,8 @@ struct MyScheduleView: View {
     
     @ObservedObject var viewModel: MyScheduleViewModel
     
-    init(repository: ConferenceScheduleRepository) {
-        self.viewModel = MyScheduleViewModel(repository: repository)
+    init(viewModel: MyScheduleViewModel) {
+        self.viewModel = viewModel
     }
     
     var body: some View {
@@ -45,6 +45,6 @@ struct MyScheduleView: View {
 
 struct MyScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        MyScheduleView(repository: ConferenceScheduleRepository())
+        MyScheduleView(viewModel: MyScheduleViewModel(repository: ConferenceScheduleRepository(service: ConferenceScheduleService(), store: ConferenceScheduleDataStore())))
     }
 }

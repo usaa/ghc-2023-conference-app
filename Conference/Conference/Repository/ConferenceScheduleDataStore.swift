@@ -8,8 +8,17 @@
 import Foundation
 import Combine
 
+protocol DataStore {
+    var data: AnyPublisher<ConferenceScheduleResult, Never> { get }
+    var currentValue: ConferenceScheduleResult { get }
+    var minutesToLive: Double { get }
+    var expired: Bool { get }
+    var dateCached: Date? { get }
+    func put(_ result: ConferenceScheduleResult)
+    func clear()
+}
 
-public class ConferenceScheduleDataStore {
+public class ConferenceScheduleDataStore: DataStore {
 
     @Published private(set) var currentValue: ConferenceScheduleResult = ConferenceScheduleResult.uninitialized
     lazy var data: AnyPublisher<ConferenceScheduleResult, Never> = $currentValue.eraseToAnyPublisher()

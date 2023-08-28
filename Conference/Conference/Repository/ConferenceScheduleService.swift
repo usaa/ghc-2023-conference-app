@@ -7,7 +7,13 @@
 
 import Foundation
 
-class ConferenceScheduleService {
+protocol ConferenceScheduleServiceHandler {
+    func getSchedule() async -> ConferenceScheduleResult
+    func register(session: Session) async -> ConferenceScheduleResult
+    func unregister(session: Session) async -> ConferenceScheduleResult
+}
+
+class ConferenceScheduleService: ConferenceScheduleServiceHandler {
     var conferenceSchedule: ConferenceSchedule
     
     init() {
