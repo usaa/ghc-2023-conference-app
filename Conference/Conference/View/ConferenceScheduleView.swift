@@ -28,7 +28,7 @@ struct ConferenceScheduleView: View {
                             Text(session.body)
                                 .font(.body)
                             Image(systemName: session.isRegistered ? "star.fill" : "star")
-                                .foregroundColor(.teal)
+                                .foregroundColor(.purple)
                         }
                         .onTapGesture {
                             if !session.isRegistered {
@@ -42,6 +42,9 @@ struct ConferenceScheduleView: View {
                 .listStyle(.plain)
                 .navigationTitle("Conference Schedule")
                 .navigationBarTitleDisplayMode(.large)
+                .toolbarBackground(.orange, for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
+                .toolbarColorScheme(.dark, for: .navigationBar)
             case.loading:
                 ProgressView()
             case.uninitialized:

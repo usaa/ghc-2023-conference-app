@@ -34,6 +34,10 @@ struct MyScheduleView: View {
                 }
                 .listStyle(.plain)
                 .navigationTitle("My Schedule")
+                .navigationBarTitleDisplayMode(.large)
+                .toolbarBackground(.orange, for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
+                .toolbarColorScheme(.dark, for: .navigationBar)
             case.loading:
                 ProgressView()
             case.uninitialized:

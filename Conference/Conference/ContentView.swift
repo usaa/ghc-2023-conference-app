@@ -19,6 +19,8 @@ struct ContentView: View {
         self.conferenceScheduleRepository = ConferenceScheduleRepository(service: self.service, store: self.store)
         self.conferenceScheduleViewModel = ConferenceScheduleViewModel(repository: self.conferenceScheduleRepository)
         self.myScheduleViewModel = MyScheduleViewModel(repository: self.conferenceScheduleRepository)
+        UITabBar.appearance().backgroundColor = UIColor(Color(.systemOrange))
+        UITabBar.appearance().unselectedItemTintColor = UIColor(Color(.white))
     }
     var body: some View {
         TabView {
@@ -31,6 +33,7 @@ struct ContentView: View {
                     Label("My Schedule", systemImage: "star.fill")
                 }
         }
+        .accentColor(.purple)
     }
 }
 
