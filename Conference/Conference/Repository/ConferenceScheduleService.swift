@@ -26,7 +26,7 @@ class ConferenceScheduleService {
             ])
     }
     
-    func getSchedule() async -> ConferenceScheduleResult {
+    func getSchedule() -> ConferenceScheduleResult {
         if let storedData = UserDefaults.standard.data(forKey: "ServiceConferenceSchedule"),
            let data = try? JSONDecoder().decode(ConferenceSchedule.self, from: storedData) {
             self.conferenceSchedule = data
