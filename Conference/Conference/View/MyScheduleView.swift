@@ -34,7 +34,6 @@ struct MyScheduleView: View {
                 }
                 .listStyle(.plain)
                 .navigationTitle("My Schedule")
-                .navigationBarTitleDisplayMode(.large)
             default:
                 Text("Uninitialized")
             }
