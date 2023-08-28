@@ -16,6 +16,9 @@
 		0CC7F1BA2A9D30C200B4C8D7 /* ConferenceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC7F1B92A9D30C200B4C8D7 /* ConferenceUITests.swift */; };
 		0CC7F1BC2A9D30C200B4C8D7 /* ConferenceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC7F1BB2A9D30C200B4C8D7 /* ConferenceUITestsLaunchTests.swift */; };
 		0CC7F1C92A9D314800B4C8D7 /* ConferenceScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC7F1C82A9D314800B4C8D7 /* ConferenceScheduleView.swift */; };
+		0CC7F1CC2A9D4D9000B4C8D7 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC7F1CB2A9D4D9000B4C8D7 /* Session.swift */; };
+		0CC7F1CE2A9D4DB400B4C8D7 /* ConferenceSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC7F1CD2A9D4DB400B4C8D7 /* ConferenceSchedule.swift */; };
+		0CC7F1D22A9D4E7E00B4C8D7 /* ConferenceScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC7F1D12A9D4E7E00B4C8D7 /* ConferenceScheduleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		0CC7F1B92A9D30C200B4C8D7 /* ConferenceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceUITests.swift; sourceTree = "<group>"; };
 		0CC7F1BB2A9D30C200B4C8D7 /* ConferenceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0CC7F1C82A9D314800B4C8D7 /* ConferenceScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceScheduleView.swift; sourceTree = "<group>"; };
+		0CC7F1CB2A9D4D9000B4C8D7 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		0CC7F1CD2A9D4DB400B4C8D7 /* ConferenceSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceSchedule.swift; sourceTree = "<group>"; };
+		0CC7F1D12A9D4E7E00B4C8D7 /* ConferenceScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceScheduleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +106,11 @@
 		0CC7F19C2A9D30BB00B4C8D7 /* Conference */ = {
 			isa = PBXGroup;
 			children = (
+				0CC7F1CF2A9D4DF800B4C8D7 /* View */,
+				0CC7F1D02A9D4E6700B4C8D7 /* ViewModel */,
+				0CC7F1CA2A9D4D7400B4C8D7 /* Model */,
 				0CC7F19D2A9D30BB00B4C8D7 /* ConferenceApp.swift */,
 				0CC7F19F2A9D30BB00B4C8D7 /* ContentView.swift */,
-				0CC7F1C82A9D314800B4C8D7 /* ConferenceScheduleView.swift */,
 				0CC7F1A12A9D30C200B4C8D7 /* Assets.xcassets */,
 				0CC7F1A32A9D30C200B4C8D7 /* Conference.entitlements */,
 				0CC7F1A42A9D30C200B4C8D7 /* Preview Content */,
@@ -133,6 +141,31 @@
 				0CC7F1BB2A9D30C200B4C8D7 /* ConferenceUITestsLaunchTests.swift */,
 			);
 			path = ConferenceUITests;
+			sourceTree = "<group>";
+		};
+		0CC7F1CA2A9D4D7400B4C8D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0CC7F1CB2A9D4D9000B4C8D7 /* Session.swift */,
+				0CC7F1CD2A9D4DB400B4C8D7 /* ConferenceSchedule.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0CC7F1CF2A9D4DF800B4C8D7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0CC7F1C82A9D314800B4C8D7 /* ConferenceScheduleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0CC7F1D02A9D4E6700B4C8D7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0CC7F1D12A9D4E7E00B4C8D7 /* ConferenceScheduleViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,9 +299,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CC7F1CC2A9D4D9000B4C8D7 /* Session.swift in Sources */,
 				0CC7F1A02A9D30BB00B4C8D7 /* ContentView.swift in Sources */,
 				0CC7F19E2A9D30BB00B4C8D7 /* ConferenceApp.swift in Sources */,
+				0CC7F1CE2A9D4DB400B4C8D7 /* ConferenceSchedule.swift in Sources */,
 				0CC7F1C92A9D314800B4C8D7 /* ConferenceScheduleView.swift in Sources */,
+				0CC7F1D22A9D4E7E00B4C8D7 /* ConferenceScheduleViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
