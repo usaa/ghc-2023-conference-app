@@ -61,21 +61,4 @@ class ConferenceScheduleService {
         return self.conferenceSchedule
     }
     
-    func register(session: Session) async -> ConferenceSchedule {
-        if let s = self.conferenceSchedule.sessions?.firstIndex(of: session) {
-            var registerSession = session
-            registerSession.isRegistered = true
-            self.conferenceSchedule.sessions?[s] = registerSession
-        }
-        return self.conferenceSchedule
-    }
-
-    func unregister(session: Session) async -> ConferenceSchedule {
-        if let s = self.conferenceSchedule.sessions?.firstIndex(of: session) {
-            var registerSession = session
-            registerSession.isRegistered = false
-            self.conferenceSchedule.sessions?[s] = registerSession
-        }
-        return self.conferenceSchedule
-    }
 }
