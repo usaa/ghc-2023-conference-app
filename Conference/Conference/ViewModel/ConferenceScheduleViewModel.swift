@@ -6,20 +6,28 @@
 //
 
 import Foundation
-
+import Combine
 
 class ConferenceScheduleViewModel: ObservableObject {
     
-    @Published var conferenceSchedule: ConferenceSchedule = ConferenceSchedule(userID: 98765, sessions: [])
+    @Published var result: ConferenceScheduleResult = .uninitialized
     var repository: ConferenceScheduleRepository
+    private var cancellables = Set<AnyCancellable>()
     
     init() {
         self.repository = ConferenceScheduleRepository()
         self.loadSchedule()
+        let result = self.repository.data.map { $0 }
+        result
+            .receive(on: DispatchQueue.main)
+            .sink {
+                self.result = $0
+            }
+            .store(in: &cancellables)
     }
     
     func loadSchedule() {
-        self.conferenceSchedule = self.repository.getSessions()
+        self.repository.getSessions()
     }
     
     func addSession(session: Session) {

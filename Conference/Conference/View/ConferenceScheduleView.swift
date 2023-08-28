@@ -13,8 +13,10 @@ struct ConferenceScheduleView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(viewModel.conferenceSchedule.sessions!) { session in
+            switch viewModel.result {
+            case .success(let conferenceSchedule):
+                List {
+                    ForEach(conferenceSchedule.sessions!) { session in
                         HStack {
                             Text(session.title)
                                 .font(.headline)
@@ -31,11 +33,14 @@ struct ConferenceScheduleView: View {
                                 viewModel.removeSession(session: session)
                             }
                         }
+                    }
                 }
+                .listStyle(.plain)
+                .navigationTitle("Conference Schedule")
+                .navigationBarTitleDisplayMode(.large)
+            default:
+                Text("Uninitialized")
             }
-            .listStyle(.plain)
-            .navigationTitle("Conference Schedule")
-            .navigationBarTitleDisplayMode(.large)
         }
     }
 }

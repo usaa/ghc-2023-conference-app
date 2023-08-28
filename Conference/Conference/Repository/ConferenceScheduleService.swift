@@ -26,39 +26,38 @@ class ConferenceScheduleService {
             ])
     }
     
-    func getSchedule() -> ConferenceSchedule {
+    func getSchedule() -> ConferenceScheduleResult {
         if let storedData = UserDefaults.standard.data(forKey: "ServiceConferenceSchedule"),
            let data = try? JSONDecoder().decode(ConferenceSchedule.self, from: storedData) {
             self.conferenceSchedule = data
-            return data
+            return .success(data: data)
         }
-        return self.conferenceSchedule
+        return .success(data: self.conferenceSchedule)
     }
     
-    func register(session: Session) -> ConferenceSchedule {
+    func register(session: Session) -> ConferenceScheduleResult {
         if let s = self.conferenceSchedule.sessions?.firstIndex(of: session) {
             var registerSession = session
             registerSession.isRegistered = true
             self.conferenceSchedule.sessions?[s] = registerSession
         }
         guard let encodedData = try? JSONEncoder().encode(self.conferenceSchedule) else {
-            return self.conferenceSchedule
+            return .success(data: self.conferenceSchedule)
         }
         UserDefaults.standard.set(encodedData, forKey: "ServiceConferenceSchedule")
-        return self.conferenceSchedule
+        return .success(data: self.conferenceSchedule)
     }
 
-    func unregister(session: Session) -> ConferenceSchedule {
+    func unregister(session: Session) -> ConferenceScheduleResult {
         if let s = self.conferenceSchedule.sessions?.firstIndex(of: session) {
             var registerSession = session
             registerSession.isRegistered = false
             self.conferenceSchedule.sessions?[s] = registerSession
         }
         guard let encodedData = try? JSONEncoder().encode(self.conferenceSchedule) else {
-            return self.conferenceSchedule
+            return .success(data: self.conferenceSchedule)
         }
         UserDefaults.standard.set(encodedData, forKey: "ServiceConferenceSchedule")
-        return self.conferenceSchedule
+        return .success(data: self.conferenceSchedule)
     }
-    
 }

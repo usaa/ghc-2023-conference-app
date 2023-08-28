@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0C49B2B32AB9F9AB0056166A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0C49B2B22AB9F9AB0056166A /* README.md */; };
+		0C3097822AA2609000406383 /* ConferenceScheduleResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3097812AA2609000406383 /* ConferenceScheduleResult.swift */; };
+		0C3097842AA2616400406383 /* ConferenceScheduleDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3097832AA2616400406383 /* ConferenceScheduleDataStore.swift */; };
 		0CC7F19E2A9D30BB00B4C8D7 /* ConferenceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC7F19D2A9D30BB00B4C8D7 /* ConferenceApp.swift */; };
 		0CC7F1A02A9D30BB00B4C8D7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC7F19F2A9D30BB00B4C8D7 /* ContentView.swift */; };
 		0CC7F1A22A9D30C200B4C8D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CC7F1A12A9D30C200B4C8D7 /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		0C49B2B22AB9F9AB0056166A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		0C3097812AA2609000406383 /* ConferenceScheduleResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceScheduleResult.swift; sourceTree = "<group>"; };
+		0C3097832AA2616400406383 /* ConferenceScheduleDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceScheduleDataStore.swift; sourceTree = "<group>"; };
 		0CC7F19A2A9D30BB00B4C8D7 /* Conference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CC7F19D2A9D30BB00B4C8D7 /* ConferenceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceApp.swift; sourceTree = "<group>"; };
 		0CC7F19F2A9D30BB00B4C8D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -182,8 +186,10 @@
 		0CC7F1E22A9E5B6900B4C8D7 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				0CC7F1DB2A9E484700B4C8D7 /* ConferenceScheduleService.swift */,
 				0CC7F1E32A9E5B9500B4C8D7 /* ConferenceScheduleRepository.swift */,
+				0CC7F1DB2A9E484700B4C8D7 /* ConferenceScheduleService.swift */,
+				0C3097832AA2616400406383 /* ConferenceScheduleDataStore.swift */,
+				0C3097812AA2609000406383 /* ConferenceScheduleResult.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -326,6 +332,8 @@
 				0CC7F1DA2A9E47AA00B4C8D7 /* MyScheduleView.swift in Sources */,
 				0CC7F1D82A9E47A200B4C8D7 /* MyScheduleViewModel.swift in Sources */,
 				0CC7F1DC2A9E484700B4C8D7 /* ConferenceScheduleService.swift in Sources */,
+				0C3097822AA2609000406383 /* ConferenceScheduleResult.swift in Sources */,
+				0C3097842AA2616400406383 /* ConferenceScheduleDataStore.swift in Sources */,
 				0CC7F1CE2A9D4DB400B4C8D7 /* ConferenceSchedule.swift in Sources */,
 				0CC7F1C92A9D314800B4C8D7 /* ConferenceScheduleView.swift in Sources */,
 				0CC7F1D22A9D4E7E00B4C8D7 /* ConferenceScheduleViewModel.swift in Sources */,

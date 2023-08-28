@@ -16,6 +16,7 @@ class MyScheduleViewModel: ObservableObject {
     }
     
     func loadSchedule() {
-        self.conferenceSchedule = ConferenceScheduleRepository().getSessions()
+        //self.conferenceSchedule = ConferenceScheduleRepository().getSessions()
     }
+    
 }
