@@ -22,5 +22,4 @@ class MyScheduleViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
-    
 }
