@@ -28,7 +28,7 @@ class ConferenceScheduleRepository {
         store.put(loadingResult)
         Task {
             try await Task.sleep(nanoseconds: 2_000_000_000)
-            let result = await service.getSchedule()
+            let result = service.getSchedule()
             store.put(result)
         }
     }
