@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Session: Identifiable {
+struct Session: Identifiable, Equatable {
     public let id: Int
     let title: String
     let body: String

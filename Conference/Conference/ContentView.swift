@@ -9,7 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ConferenceScheduleView()
+        TabView {
+            ConferenceScheduleView()
+                .tabItem{
+                    Label("Schedule", systemImage: "calendar.badge.plus")
+                }
+            MyScheduleView()
+                .tabItem{
+                    Label("My Schedule", systemImage: "star.fill")
+                }
+        }
     }
 }
 

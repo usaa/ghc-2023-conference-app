@@ -21,6 +21,15 @@ struct ConferenceScheduleView: View {
                             Spacer()
                             Text(session.body)
                                 .font(.body)
+                            Image(systemName: session.isRegistered ? "star.fill" : "star")
+                                .foregroundColor(.teal)
+                        }
+                        .onTapGesture {
+                            if !session.isRegistered {
+                                viewModel.addSession(session: session)
+                            } else {
+                                viewModel.removeSession(session: session)
+                            }
                         }
                 }
             }
