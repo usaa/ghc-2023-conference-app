@@ -42,7 +42,9 @@ struct ConferenceScheduleView: View {
                 .listStyle(.plain)
                 .navigationTitle("Conference Schedule")
                 .navigationBarTitleDisplayMode(.large)
-            default:
+            case.loading:
+                ProgressView()
+            case.uninitialized:
                 Text("Uninitialized")
             }
         }

@@ -17,13 +17,28 @@ class ConferenceScheduleRepository {
     
     init() {
         data = store.data.handleEvents(receiveSubscription: { [weak self] _ in
-            self?.getSessions()
+            if self?.store.expired == true {
+                self?.refresh()
+            }
         }).eraseToAnyPublisher()
     }
     
+    public func refresh() {
+        let loadingResult: ConferenceScheduleResult = .loading
+        store.put(loadingResult)
+        Task {
+            try await Task.sleep(nanoseconds: 2_000_000_000)
+            let result = await service.getSchedule()
+            store.put(result)
+        }
+    }
+    
     func getSessions() {
-        let result = self.service.getSchedule()
-        store.put(result)
+        if store.expired {
+            self.refresh()
+        } else {
+            self.store.put(self.store.currentValue)
+        }
     }
     
     func add(session: Session) {

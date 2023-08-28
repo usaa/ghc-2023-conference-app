@@ -34,7 +34,9 @@ struct MyScheduleView: View {
                 }
                 .listStyle(.plain)
                 .navigationTitle("My Schedule")
-            default:
+            case.loading:
+                ProgressView()
+            case.uninitialized:
                 Text("Uninitialized")
             }
         }

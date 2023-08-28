@@ -9,11 +9,12 @@ import Foundation
 
 enum ConferenceScheduleResult {
     case uninitialized
+    case loading
     case success(data: ConferenceSchedule)
     
     var data: ConferenceSchedule {
         switch self {
-        case .uninitialized:
+        case .uninitialized, .loading:
             return ConferenceSchedule(userID: 98765, sessions: [])
         case let .success(data):
             return data
