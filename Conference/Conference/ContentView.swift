@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    let conferenceScheduleRepository: ConferenceScheduleRepository = ConferenceScheduleRepository()
     var body: some View {
         TabView {
-            ConferenceScheduleView()
+            ConferenceScheduleView(repository: conferenceScheduleRepository)
                 .tabItem{
                     Label("Schedule", systemImage: "calendar.badge.plus")
                 }
-            MyScheduleView()
+            MyScheduleView(repository: conferenceScheduleRepository)
                 .tabItem{
                     Label("My Schedule", systemImage: "star.fill")
                 }

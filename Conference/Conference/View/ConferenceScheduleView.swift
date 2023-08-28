@@ -9,7 +9,11 @@ import SwiftUI
 
 struct ConferenceScheduleView: View {
     
-    @StateObject var viewModel = ConferenceScheduleViewModel()
+    @ObservedObject var viewModel: ConferenceScheduleViewModel
+    
+    init(repository: ConferenceScheduleRepository) {
+        self.viewModel = ConferenceScheduleViewModel(repository: repository)
+    }
     
     var body: some View {
         NavigationStack {
@@ -47,6 +51,6 @@ struct ConferenceScheduleView: View {
 
 struct ConferenceSchedule_Previews: PreviewProvider {
     static var previews: some View {
-        ConferenceScheduleView()
+        ConferenceScheduleView(repository: ConferenceScheduleRepository())
     }
 }

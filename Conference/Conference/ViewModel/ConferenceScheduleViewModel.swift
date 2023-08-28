@@ -14,8 +14,8 @@ class ConferenceScheduleViewModel: ObservableObject {
     var repository: ConferenceScheduleRepository
     private var cancellables = Set<AnyCancellable>()
     
-    init() {
-        self.repository = ConferenceScheduleRepository()
+    init(repository: ConferenceScheduleRepository) {
+        self.repository = repository
         self.loadSchedule()
         let result = self.repository.data.map { $0 }
         result
