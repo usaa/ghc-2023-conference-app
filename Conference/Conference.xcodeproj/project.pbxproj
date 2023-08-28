@@ -25,6 +25,7 @@
 		0CC7F1DA2A9E47AA00B4C8D7 /* MyScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC7F1D92A9E47AA00B4C8D7 /* MyScheduleView.swift */; };
 		0CC7F1DC2A9E484700B4C8D7 /* ConferenceScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC7F1DB2A9E484700B4C8D7 /* ConferenceScheduleService.swift */; };
 		0CC7F1E42A9E5B9500B4C8D7 /* ConferenceScheduleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC7F1E32A9E5B9500B4C8D7 /* ConferenceScheduleRepository.swift */; };
+		0CDB281E2AB4F1DA0027C591 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB281D2AB4F1DA0027C591 /* MockService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		0CC7F1D92A9E47AA00B4C8D7 /* MyScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScheduleView.swift; sourceTree = "<group>"; };
 		0CC7F1DB2A9E484700B4C8D7 /* ConferenceScheduleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceScheduleService.swift; sourceTree = "<group>"; };
 		0CC7F1E32A9E5B9500B4C8D7 /* ConferenceScheduleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceScheduleRepository.swift; sourceTree = "<group>"; };
+		0CDB281D2AB4F1DA0027C591 /* MockService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		0CC7F1AE2A9D30C200B4C8D7 /* ConferenceTests */ = {
 			isa = PBXGroup;
 			children = (
+				0CDB281D2AB4F1DA0027C591 /* MockService.swift */,
 				0CC7F1AF2A9D30C200B4C8D7 /* ConferenceTests.swift */,
 			);
 			path = ConferenceTests;
@@ -345,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CC7F1B02A9D30C200B4C8D7 /* ConferenceTests.swift in Sources */,
+				0CDB281E2AB4F1DA0027C591 /* MockService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
