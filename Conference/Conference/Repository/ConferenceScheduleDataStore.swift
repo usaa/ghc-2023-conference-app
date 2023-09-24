@@ -30,7 +30,7 @@ public class ConferenceScheduleDataStore {
     /// Returns the current time in seconds, used to determine lifespan of data
     var currentTime: () -> TimeInterval = { Date().timeIntervalSince1970 }
 
-    public init(minutesToLive: Double = 5.0) {
+    public init(minutesToLive: Double = 0.08) {
         self.minutesToLive = minutesToLive
         if let storedTime = UserDefaults.standard.data(forKey: "ConferenceScheduleStorageTime"),
            let storageTime = try? JSONDecoder().decode(StorageTime.self, from: storedTime) {
