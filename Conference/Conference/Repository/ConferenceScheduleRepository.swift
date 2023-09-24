@@ -29,12 +29,14 @@ class ConferenceScheduleRepository {
     func add(session: Session) {
         //update the data
         //write the updated data to the data store
-        self.service.register(session:session)
+        let result = self.service.register(session:session)
+        store.put(result)
     }
     
     func remove(session: Session) {
         //update the data
         //write the updated data to the data store
-        self.service.unregister(session:session)
+        let result = self.service.unregister(session:session)
+        store.put(result)
     }
 }
