@@ -8,9 +8,9 @@
 import Foundation
 
 protocol ConferenceScheduleServiceHandler {
-    func getSchedule() async -> ConferenceScheduleResult
-    func register(session: Session) async -> ConferenceScheduleResult
-    func unregister(session: Session) async -> ConferenceScheduleResult
+    func getSchedule() -> ConferenceScheduleResult
+    func register(session: Session) -> ConferenceScheduleResult
+    func unregister(session: Session) -> ConferenceScheduleResult
 }
 
 class ConferenceScheduleService: ConferenceScheduleServiceHandler {
