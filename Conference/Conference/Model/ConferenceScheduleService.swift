@@ -26,7 +26,7 @@ class ConferenceScheduleService {
             ])
     }
     
-    func getSchedule() async -> ConferenceSchedule {
+    func getSchedule() -> ConferenceSchedule {
         return self.conferenceSchedule
     }
 }

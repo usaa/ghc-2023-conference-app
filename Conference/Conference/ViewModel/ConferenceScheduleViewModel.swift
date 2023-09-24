@@ -13,13 +13,11 @@ class ConferenceScheduleViewModel: ObservableObject {
     @Published var conferenceSchedule: ConferenceSchedule = ConferenceSchedule(userID: 98765, sessions: [])
     
     init() {
-        Task {
-            await self.loadSchedule()
-        }
+        self.loadSchedule()
     }
     
-    func loadSchedule() async {
-        self.conferenceSchedule = await ConferenceScheduleService().getSchedule()
+    func loadSchedule() {
+        self.conferenceSchedule = ConferenceScheduleService().getSchedule()
     }
     
 }
