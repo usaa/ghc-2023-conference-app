@@ -18,14 +18,10 @@ class ConferenceScheduleRepository {
     }
     
     func add(session: Session) {
-        Task {
-            await self.service.register(session:session)
-        }
+        self.service.register(session:session)
     }
     
     func remove(session: Session) {
-        Task {
-            await self.service.unregister(session:session)
-        }
+        self.service.unregister(session:session)
     }
 }
